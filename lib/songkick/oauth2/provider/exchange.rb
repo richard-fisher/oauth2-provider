@@ -39,6 +39,7 @@ module Songkick
           update_authorization
 
           response = {}
+          response['token_type'] = :bearer
           [ACCESS_TOKEN, REFRESH_TOKEN, SCOPE].each do |key|
             value = @authorization.__send__(key)
             response[key] = value if value
